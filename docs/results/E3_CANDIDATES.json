@@ -1,0 +1,217 @@
+{
+ "status": "COMPLETE",
+ "candidates": [
+  {
+   "id": "A-logistic-0.1",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 0.1
+   },
+   "tuning_average_precision": 0.5755830632158747,
+   "tuning_brier": 0.2222595779954806,
+   "fit_seconds": 1.26,
+   "score_seconds": 0.082,
+   "iterations": 11,
+   "peak_additional_bytes": 1007616,
+   "min_available_ram": 7446904832
+  },
+  {
+   "id": "A-logistic-1.0",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 1.0
+   },
+   "tuning_average_precision": 0.5755813907593899,
+   "tuning_brier": 0.22225990737137163,
+   "fit_seconds": 1.194,
+   "score_seconds": 0.087,
+   "iterations": 11,
+   "peak_additional_bytes": 4096,
+   "min_available_ram": 7422107648
+  },
+  {
+   "id": "A-logistic-10.0",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 10.0
+   },
+   "tuning_average_precision": 0.5755812912244264,
+   "tuning_brier": 0.2222599403120717,
+   "fit_seconds": 1.223,
+   "score_seconds": 0.087,
+   "iterations": 11,
+   "peak_additional_bytes": 0,
+   "min_available_ram": 7398113280
+  },
+  {
+   "id": "A-forest-100-8-5",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+   },
+   "tuning_average_precision": 0.5883793479428532,
+   "tuning_brier": 0.21795744844679577,
+   "fit_seconds": 27.627,
+   "score_seconds": 1.336,
+   "nodes": 47246,
+   "deepest_tree": 8,
+   "peak_additional_bytes": 1567924224,
+   "min_available_ram": 5881421824
+  },
+  {
+   "id": "A-forest-100-12-10",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 12,
+    "min_samples_leaf": 10
+   },
+   "tuning_average_precision": 0.5894550073538993,
+   "tuning_brier": 0.21797313964609405,
+   "fit_seconds": 35.731,
+   "score_seconds": 2.043,
+   "nodes": 413576,
+   "deepest_tree": 12,
+   "peak_additional_bytes": 1567387648,
+   "min_available_ram": 5895892992
+  },
+  {
+   "id": "A-forest-150-16-20",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 150,
+    "max_depth": 16,
+    "min_samples_leaf": 20
+   },
+   "tuning_average_precision": 0.5888647855349133,
+   "tuning_brier": 0.21842881817151896,
+   "fit_seconds": 59.722,
+   "score_seconds": 4.574,
+   "nodes": 2352070,
+   "deepest_tree": 16,
+   "peak_additional_bytes": 1757216768,
+   "min_available_ram": 5730422784
+  },
+  {
+   "id": "B-logistic-0.1",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 0.1
+   },
+   "tuning_average_precision": 0.5932084506054085,
+   "tuning_brier": 0.2182536201847723,
+   "fit_seconds": 2.984,
+   "score_seconds": 0.109,
+   "iterations": 28,
+   "peak_additional_bytes": 641748992,
+   "min_available_ram": 6698876928
+  },
+  {
+   "id": "B-logistic-1.0",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 1.0
+   },
+   "tuning_average_precision": 0.5932055309796516,
+   "tuning_brier": 0.21825392687412637,
+   "fit_seconds": 2.897,
+   "score_seconds": 0.119,
+   "iterations": 28,
+   "peak_additional_bytes": 652103680,
+   "min_available_ram": 6696538112
+  },
+  {
+   "id": "B-logistic-10.0",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 10.0
+   },
+   "tuning_average_precision": 0.5932052476315617,
+   "tuning_brier": 0.21825395761888666,
+   "fit_seconds": 2.936,
+   "score_seconds": 0.107,
+   "iterations": 28,
+   "peak_additional_bytes": 627257344,
+   "min_available_ram": 6700822528
+  },
+  {
+   "id": "B-forest-100-8-5",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+   },
+   "tuning_average_precision": 0.6060289106459156,
+   "tuning_brier": 0.21512776092362773,
+   "fit_seconds": 43.503,
+   "score_seconds": 1.594,
+   "nodes": 50028,
+   "deepest_tree": 8,
+   "peak_additional_bytes": 1598570496,
+   "min_available_ram": 5685923840
+  },
+  {
+   "id": "B-forest-100-12-10",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 12,
+    "min_samples_leaf": 10
+   },
+   "tuning_average_precision": 0.6078610342578238,
+   "tuning_brier": 0.2147173946881187,
+   "fit_seconds": 55.961,
+   "score_seconds": 2.511,
+   "nodes": 540546,
+   "deepest_tree": 12,
+   "peak_additional_bytes": 1678307328,
+   "min_available_ram": 5580242944
+  },
+  {
+   "id": "B-forest-150-16-20",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 150,
+    "max_depth": 16,
+    "min_samples_leaf": 20
+   },
+   "tuning_average_precision": 0.6084089053228182,
+   "tuning_brier": 0.2146274754301263,
+   "fit_seconds": 94.694,
+   "score_seconds": 5.539,
+   "nodes": 3168846,
+   "deepest_tree": 16,
+   "peak_additional_bytes": 1862938624,
+   "min_available_ram": 5480509440
+  }
+ ],
+ "selected": {
+  "logistic": "B-logistic-0.1",
+  "forest": "B-forest-150-16-20"
+ },
+ "same_feature_comparison": {
+  "A": {
+   "logistic": 0.5755830632158747,
+   "forest": 0.5894550073538993
+  },
+  "B": {
+   "logistic": 0.5932084506054085,
+   "forest": 0.6084089053228182
+  }
+ }
+}

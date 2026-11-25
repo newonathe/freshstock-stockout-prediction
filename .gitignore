@@ -1,0 +1,14 @@
+# environments, data, models and generated outputs stay local
+.venv*/
+__pycache__/
+*.pyc
+.build/
+data/
+bundle/
+runs/
+runs-expanded/
+reports/
+release-2.0/
+*.joblib
+*.npz
+*.parquet

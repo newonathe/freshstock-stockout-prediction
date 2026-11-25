@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="FreshStock pipeline from checked publisher files to the offline desktop app">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5B6B65"/></marker></defs><rect x="1" y="1" width="898" height="358" rx="12" fill="#fff" stroke="#D5DEDA"/>
+<text x="30" y="36" font-size="13" font-weight="600" fill="#5B6B65">TRAIN (earlier dates only)</text>
+<text x="138" y="206" font-size="13" font-weight="600" fill="#5B6B65">EVALUATE ONCE, THEN SERVE OFFLINE</text>
+<rect x="30" y="52" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="120" y="83" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Publisher files</text><text x="120" y="105" text-anchor="middle" font-size="13" fill="#5B6B65">SHA-256 checked</text>
+<rect x="250" y="52" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="340" y="83" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Past-only features</text><text x="340" y="105" text-anchor="middle" font-size="13" fill="#5B6B65">18 inputs, 28 days</text>
+<rect x="470" y="52" width="180" height="72" rx="8" fill="#1B5E48" stroke="#1B5E48" stroke-width="1.5"/><text x="560" y="83" text-anchor="middle" font-size="16" font-weight="600" fill="#fff">Tune and refit</text><text x="560" y="105" text-anchor="middle" font-size="13" fill="#D5E6DD">2 models, 12 settings</text>
+<rect x="690" y="52" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="780" y="83" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Calibrate</text><text x="780" y="105" text-anchor="middle" font-size="13" fill="#5B6B65">then pick thresholds</text>
+<path d="M210 88H247" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M430 88H467" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M650 88H687" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="560" y="146" text-anchor="middle" font-size="13" fill="#5B6B65">protocol and source hashes locked before tuning</text>
+<rect x="30" y="222" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="120" y="253" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Freeze</text><text x="120" y="275" text-anchor="middle" font-size="13" fill="#5B6B65">models and thresholds</text>
+<rect x="250" y="222" width="180" height="72" rx="8" fill="#1B5E48" stroke="#1B5E48" stroke-width="1.5"/><text x="340" y="253" text-anchor="middle" font-size="16" font-weight="600" fill="#fff">Score holdout</text><text x="340" y="275" text-anchor="middle" font-size="13" fill="#D5E6DD">7 unseen days, once</text>
+<rect x="470" y="222" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="560" y="253" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Verified bundle</text><text x="560" y="275" text-anchor="middle" font-size="13" fill="#5B6B65">hash-pinned files</text>
+<rect x="690" y="222" width="180" height="72" rx="8" fill="#E3EEE7" stroke="#1B5E48" stroke-width="1.5"/><text x="780" y="253" text-anchor="middle" font-size="16" font-weight="600" fill="#172B25">Desktop app</text><text x="780" y="275" text-anchor="middle" font-size="13" fill="#5B6B65">offline, human review</text>
+<path d="M210 258H247" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M430 258H467" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M650 258H687" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M780 124V172H120V219" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="340" y="320" text-anchor="middle" font-size="13" fill="#5B6B65">independent script recomputes the results (237 checks)</text>
+<path d="M340 294V305" fill="none" stroke="#5B6B65" stroke-width="1.8" marker-end="url(#a)"/>
+</svg>

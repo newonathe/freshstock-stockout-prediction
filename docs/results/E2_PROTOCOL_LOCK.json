@@ -1,0 +1,239 @@
+{
+ "name": "EXP-02 v1",
+ "seed": 111,
+ "n_series": 50000,
+ "cohort_digest": "f2e193a45296f3b4db4ba9d053b7e2f23873f49d557a401a874b197df2857f2d",
+ "grid": "full",
+ "calibration": "sigmoid",
+ "threads": {
+  "forest_n_jobs": 16,
+  "blas_threads": 6
+ },
+ "sources": {
+  "train": {
+   "sha256": "6706832db892bbae4969c19d87e07975d2543d2ba7d7d4756360654785de5a3d",
+   "size": 106436287,
+   "first_day": "2024-03-28",
+   "n_days": 90,
+   "n_keys": 50000
+  },
+  "holdout": {
+   "sha256": "1b118840664280c6b88bffc84c80ee1f54c05d911e354b7599e5da10995e960e",
+   "size": 8440124,
+   "first_day": "2024-06-26",
+   "n_days": 7,
+   "n_keys": 50000
+  }
+ },
+ "revision": "08c1fab7f9257bc73679d415d65d644165d351d4",
+ "target": "1 if stock_hour6_22_cnt > 0 on the target date, else 0",
+ "splits": {
+  "initial_fit": [
+   "2024-04-25",
+   "2024-06-04"
+  ],
+  "tuning": [
+   "2024-06-05",
+   "2024-06-11"
+  ],
+  "calibration": [
+   "2024-06-12",
+   "2024-06-18"
+  ],
+  "threshold": [
+   "2024-06-19",
+   "2024-06-25"
+  ],
+  "refit": [
+   "2024-04-25",
+   "2024-06-11"
+  ],
+  "holdout": [
+   "2024-06-26",
+   "2024-07-02"
+  ]
+ },
+ "features": {
+  "A": [
+   "sales_lag1",
+   "stockout_hours_lag1",
+   "sales_mean7",
+   "stockout_days7",
+   "weekday_0",
+   "weekday_1",
+   "weekday_2",
+   "weekday_3",
+   "weekday_4",
+   "weekday_5",
+   "weekday_6"
+  ],
+  "B": [
+   "sales_lag1",
+   "stockout_hours_lag1",
+   "sales_mean7",
+   "stockout_days7",
+   "stockout_hours_mean7",
+   "stockout_hours_mean14",
+   "stockout_days14",
+   "sales_mean14",
+   "sales_mean28",
+   "stockout_days28",
+   "days_since_stockout28",
+   "weekday_0",
+   "weekday_1",
+   "weekday_2",
+   "weekday_3",
+   "weekday_4",
+   "weekday_5",
+   "weekday_6"
+  ]
+ },
+ "candidates": [
+  {
+   "id": "A-logistic-0.1",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 0.1
+   }
+  },
+  {
+   "id": "A-logistic-1.0",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 1.0
+   }
+  },
+  {
+   "id": "A-logistic-10.0",
+   "feature_set": "A",
+   "family": "logistic",
+   "params": {
+    "C": 10.0
+   }
+  },
+  {
+   "id": "A-forest-100-8-5",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+   }
+  },
+  {
+   "id": "A-forest-100-12-10",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 12,
+    "min_samples_leaf": 10
+   }
+  },
+  {
+   "id": "A-forest-150-16-20",
+   "feature_set": "A",
+   "family": "forest",
+   "params": {
+    "n_estimators": 150,
+    "max_depth": 16,
+    "min_samples_leaf": 20
+   }
+  },
+  {
+   "id": "B-logistic-0.1",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 0.1
+   }
+  },
+  {
+   "id": "B-logistic-1.0",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 1.0
+   }
+  },
+  {
+   "id": "B-logistic-10.0",
+   "feature_set": "B",
+   "family": "logistic",
+   "params": {
+    "C": 10.0
+   }
+  },
+  {
+   "id": "B-forest-100-8-5",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+   }
+  },
+  {
+   "id": "B-forest-100-12-10",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 100,
+    "max_depth": 12,
+    "min_samples_leaf": 10
+   }
+  },
+  {
+   "id": "B-forest-150-16-20",
+   "feature_set": "B",
+   "family": "forest",
+   "params": {
+    "n_estimators": 150,
+    "max_depth": 16,
+    "min_samples_leaf": 20
+   }
+  }
+ ],
+ "selection_rule": "per family: highest tuning AP; within 1e-06 of it set A, then the simpler setting",
+ "calibration_rule": "sigmoid only if its Brier score on the threshold dates is strictly lower than raw",
+ "threshold_candidates": [
+  0.1,
+  0.2,
+  0.3,
+  0.4,
+  0.5,
+  0.6,
+  0.7,
+  0.8,
+  0.9
+ ],
+ "threshold_rule": "max F1, then higher precision, then higher threshold; score >= threshold",
+ "review_rule": "k = ceil(0.10 * series) per day, descending score then ascending key",
+ "primary_metric": "pooled average precision on the holdout",
+ "baseline": "stockout yesterday",
+ "environment": {
+  "scikit-learn": "1.8.0",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "pandas": "2.3.3",
+  "joblib": "1.6.0",
+  "pyarrow": "26.0.1",
+  "threadpoolctl": "3.8.0"
+ },
+ "code_sha256": {
+  "freshstock/data.py": "63782e20e144cb6dffa5ea278114f214721d2d5fe6975c5f2d1ce2e16140760f",
+  "freshstock/experiment.py": "ca6ca493d5a915d3b44671bceceeb6d4ffced2b1405787a9d658f488b4d2a65d",
+  "freshstock/expanded/data.py": "514b306aea2a854c34911650d6bdb9f3c3fdab32e907e33cfd3f162a0058fffe",
+  "freshstock/expanded/experiment.py": "4d71053af3b3a6e9be9ba972ee9daa7afff7d5a596fa853079bffbd7d0d8567a",
+  "freshstock/expanded/metrics.py": "2a2e80c9487b79bf23888b54b0eab4bba5a866ea476f14501c66762644f65d6a"
+ },
+ "resource_decision": {
+  "receipt": "E2_RESOURCE_DECISION.json",
+  "receipt_sha256": "36169a2b71e9914237926297b423216c877a58d883101cc8c550ccbe0f120c90"
+ },
+ "created_utc": "2026-11-25T13:43:40+00:00"
+}
